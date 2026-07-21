@@ -17,11 +17,10 @@ const Homepage = () => {
                 {/* titles */}
                 <div className="">
                     <h1 className="text-gray-800 text-2xl md:text-5xl lg:text-6xl font-bold">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Welcome to Jake's Blog site.
                     </h1>
                     <p className="mt-8 text-md md:text-xl">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing
-                        elit. Accusamus nisi reiciendis consequuntur nihil non.
+                        This is a portfolio project I built to learn more about the MERN stack.
                     </p>
                 </div>
                 {/* animated button */}
