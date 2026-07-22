@@ -93,12 +93,12 @@ const Write = () => {
                     setProgress={setProgress}
                     setData={setCover}
                 >
-                    <button className="w-max p-2 shadow-md rounded-xl text-sm text-gray-500 bg-white">
+                    <button className="w-max p-2 shadow-md rounded-xl text-sm text-gray-500 bg-white cursor-pointer">
                         Add a cover image
                     </button>
                 </Upload>
                 <input
-                    className="text-4xl font-semibold bg-white outline-none rounded-xl shadow-md"
+                    className="p-4 text-4xl font-semibold bg-white outline-none rounded-xl shadow-md"
                     type="text"
                     placeholder="Enter post title here..."
                     name="title"
