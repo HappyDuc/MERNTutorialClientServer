@@ -98,9 +98,9 @@ const Write = () => {
                     </button>
                 </Upload>
                 <input
-                    className="text-4xl font-semibold bg-transparent outline-none"
+                    className="text-4xl font-semibold bg-white outline-none rounded-xl shadow-md"
                     type="text"
-                    placeholder="My Awesome Story"
+                    placeholder="Enter post title here..."
                     name="title"
                 />
                 <div className="flex items-center gap-4">
