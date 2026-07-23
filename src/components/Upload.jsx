@@ -19,7 +19,7 @@ const Upload = ({ children, type, setProgress, setData}) => {
             if (!response.ok) {
                 const errorText = await response.text();
                 throw new Error(
-                    `Request failed with status ${response.status}: ${errorText}`,
+                    `Error ${response.status}: ${errorText}`,
                 );
             }
 

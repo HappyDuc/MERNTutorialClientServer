@@ -16,6 +16,9 @@ const Write = () => {
     const [video, setVideo] = useState("");
     const [progress, setProgress] = useState(0);
 
+    const [title, setTitle] = useState("");
+    const [desc, setDesc] = useState("");
+
     useEffect(() => {
         img && setValue((prev) => prev + `<p><image src="${img.url}"/></p`);
     }, [img]);
@@ -63,7 +66,17 @@ const Write = () => {
         e.preventDefault();
 
         if (progress !== 100) {
-            toast.error("Please upload the cover image first");
+            toast.warning(
+                "Please upload the cover image before submitting a post.",
+            );
+            return;
+        }
+        if (title === "") {
+            toast.warning("Please add a title to your post.");
+            return;
+        }
+        if (desc === "") {
+            toast.warning("Please add a description to your post.");
             return;
         }
 
@@ -102,6 +115,8 @@ const Write = () => {
                     type="text"
                     placeholder="Enter post title here..."
                     name="title"
+                    value={title}
+                    onChange={setTitle}
                 />
                 <div className="flex items-center gap-4">
                     <label className="text-sm">Choose a category:</label>
@@ -121,6 +136,8 @@ const Write = () => {
                     className="p-4 rounded-xl bg-white shadow-md"
                     name="desc"
                     placeholder="A Short Description"
+                    value={desc}
+                    onChange={setDesc}
                 />
                 <div className="flex flex-1">
                     <div className="flex flex-col gap-2 mr-2">
