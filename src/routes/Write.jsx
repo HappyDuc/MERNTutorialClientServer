@@ -156,7 +156,7 @@ const Write = () => {
                     {mutation.isPending ? "Loading..." : "Send"}
                 </button>
                 {"Progress:" + progress + "%"}
-                {mutation.isError && <span>{mutation.error.message}</span>}
+                {mutation.isError && <span>{mutation.error.message}. If you are seeing this, check you have enterred a title, description AND body text as well as adding a cover image and try again.</span>}
             </form>
         </div>
     );
