@@ -34,7 +34,7 @@ const PostList = () => {
             lastPage.hasMore ? pages.length + 1 : undefined,
     });
 
-    if (isFetching) return "Loading...";
+    if (isFetching) return "Loading... (this may take up to 30 seconds when the website hasn't been used for some time.)";
 
     if (status === "error") return "Something went wrong!";
 

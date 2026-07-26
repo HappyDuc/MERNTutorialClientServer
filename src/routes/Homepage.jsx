@@ -10,6 +10,7 @@ const Homepage = () => {
             <div className="flex gap-4">
                 <Link to="/">Home</Link>
                 <span>•</span>
+                <Link to="/posts" className="text-blue-800">Blogs and Articles</Link>
                 <span className="text-blue-800">Blogs and Articles</span>
             </div>
             {/* INTRODUCTION */}
@@ -24,7 +25,7 @@ const Homepage = () => {
                     </p>
                 </div>
                 {/* animated button */}
-                <Link to="write" className="hidden md:block relative">
+                <Link to="write" className="hidden md:block relative cursor-pointer">
                     <svg
                         viewBox="0 0 200 200"
                         width="200"
