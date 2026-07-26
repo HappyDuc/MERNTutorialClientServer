@@ -115,8 +115,8 @@ const Write = () => {
                     type="text"
                     placeholder="Enter post title here..."
                     name="title"
-                    value={title}
-                    onChange={setTitle}
+                    value={value}
+                    onChange={setValue}
                 />
                 <div className="flex items-center gap-4">
                     <label className="text-sm">Choose a category:</label>

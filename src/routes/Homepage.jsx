@@ -11,7 +11,6 @@ const Homepage = () => {
                 <Link to="/">Home</Link>
                 <span>•</span>
                 <Link to="/posts" className="text-blue-800">Blogs and Articles</Link>
-                <span className="text-blue-800">Blogs and Articles</span>
             </div>
             {/* INTRODUCTION */}
             <div className="flex items-center justify-between">
