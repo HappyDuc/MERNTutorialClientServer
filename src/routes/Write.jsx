@@ -71,14 +71,14 @@ const Write = () => {
             );
             return;
         }
-        if (title === "") {
-            toast.warning("Please add a title to your post.");
-            return;
-        }
-        if (desc === "") {
-            toast.warning("Please add a description to your post.");
-            return;
-        }
+        // if (title === "") {
+        //     toast.warning("Please add a title to your post.");
+        //     return;
+        // }
+        // if (desc === "") {
+        //     toast.warning("Please add a description to your post.");
+        //     return;
+        // }
 
         const formData = new FormData(e.target);
 
@@ -110,6 +110,7 @@ const Write = () => {
                         Add a cover image
                     </button>
                 </Upload>
+                {"Progress:" + progress + "%"}
                 <input
                     className="p-4 text-4xl font-semibold bg-white outline-none rounded-xl shadow-md"
                     type="text"
@@ -172,7 +173,6 @@ const Write = () => {
                 >
                     {mutation.isPending ? "Loading..." : "Send"}
                 </button>
-                {"Progress:" + progress + "%"}
                 {mutation.isError && (
                     <span>
                         {mutation.error.message}. If you are seeing this, check
