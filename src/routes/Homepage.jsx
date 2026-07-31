@@ -54,6 +54,7 @@ const Homepage = () => {
                             fill="none"
                             stroke="white"
                             strokeWidth="2"
+                            className="cursor-pointer"
                         >
                             <line x1="6" y1="18" x2="18" y2="6" />
                             <polyline points="9 6 18 6 18 15" />
