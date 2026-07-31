@@ -51,7 +51,7 @@ const Navbar = () => {
                 <Link to="/" className="text-white">Home</Link>
                 <Link to="/posts?sort=trending" className="text-white">Trending</Link>
                 <Link to="/posts?sort=popular" className="text-white">Most Popular</Link>
-                <Link to="/about" className="text-white">About Jake</Link>
+                <Link to="/about" className="text-white">About Me</Link>
                 <Show when="signed-out">
                     <Link to="/login">
                         <button className="py-2 px-4 rounded-3xl bg-blue-800 text-white">
