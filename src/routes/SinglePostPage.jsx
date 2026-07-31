@@ -31,8 +31,9 @@ const SinglePostPage = () => {
 
     return (
         <div className="flex flex-col gap-8">
-            {/* detail */}
+            {/* Post (without comments) */}
             <div className="flex gap-8">
+                {/* Post Title and Content */}
                 <div className="lg:w-3/5 flex flex-col gap-8">
                     <h1 className="text-xl md:text-3xl xl:text-4xl 2xl:text-5xl font-semibold">
                         {data.title}
@@ -47,7 +48,72 @@ const SinglePostPage = () => {
                         <span>{format(data.createdAt)}</span>
                     </div>
                     <p className="text-gray-500 font-medium">{data.desc}</p>
+
+                    {/* Post content text */}
+                    <div className="flex flex-col md:flex-row gap-12 justify-between">
+                        {/* text */}
+                        <div className="lg:text-lg flex flex-col gap-6 text-justify">
+                            <ReactQuill
+                                value={data.content}
+                                readOnly={true}
+                                theme={"bubble"}
+                            />
+                        </div>
+                        {/* menu */}
+                        <div className="px-4 h-max sticky top-8">
+                            <h1 className="mb-4 text-sm font-medium">Author</h1>
+                            <div className="flex flex-col gap-4">
+                                <div className="flex items-center gap-8">
+                                    {data.user.img && (
+                                        <DisplayImage
+                                            src={data.user.img}
+                                            className="w-12 h-12 rounded-full object-cover"
+                                            w="48"
+                                            h="48"
+                                        />
+                                    )}
+                                    <Link className="text-blue-800">
+                                        {data.user.username}
+                                    </Link>
+                                </div>
+                                <div className="flex gap-2">
+                                    <Link>
+                                        <DisplayImage src="facebook.svg" />
+                                    </Link>
+                                    <Link>
+                                        <DisplayImage src="instagram.svg" />
+                                    </Link>
+                                </div>
+                            </div>
+                            <PostMenuActions post={data} />
+                            <h1 className="mt-8 mb-4 text-sm font-medium">
+                                Categories
+                            </h1>
+                            <div className="flex flex-col gap-2 text-sm">
+                                <Link className="underline" to="/">
+                                    All
+                                </Link>
+                                <Link className="underline" to="/">
+                                    Development
+                                </Link>
+                                <Link className="underline" to="/">
+                                    Databases
+                                </Link>
+                                <Link className="underline" to="/">
+                                    Search Engines
+                                </Link>
+                                <Link className="underline" to="/">
+                                    Marketing
+                                </Link>
+                                <h1 className="mt-8 mb-4 text-sm font-medium">
+                                    Search
+                                </h1>
+                                <Search />
+                            </div>
+                        </div>
+                    </div>
                 </div>
+                {/* Cover image */}
                 {data.img && (
                     <div className="hidden lg:block w-2/5">
                         <DisplayImage
@@ -57,69 +123,6 @@ const SinglePostPage = () => {
                         />
                     </div>
                 )}
-            </div>
-            {/* content */}
-            <div className="flex flex-col md:flex-row gap-12 justify-between">
-                {/* text */}
-                <div className="lg:text-lg flex flex-col gap-6 text-justify">
-                    <ReactQuill
-                        value={data.content}
-                        readOnly={true}
-                        theme={"bubble"}
-                    />
-                </div>
-                {/* menu */}
-                <div className="px-4 h-max sticky top-8">
-                    <h1 className="mb-4 text-sm font-medium">Author</h1>
-                    <div className="flex flex-col gap-4">
-                        <div className="flex items-center gap-8">
-                            {data.user.img && (
-                                <DisplayImage
-                                    src={data.user.img}
-                                    className="w-12 h-12 rounded-full object-cover"
-                                    w="48"
-                                    h="48"
-                                />
-                            )}
-                            <Link className="text-blue-800">
-                                {data.user.username}
-                            </Link>
-                        </div>
-                        <div className="flex gap-2">
-                            <Link>
-                                <DisplayImage src="facebook.svg" />
-                            </Link>
-                            <Link>
-                                <DisplayImage src="instagram.svg" />
-                            </Link>
-                        </div>
-                    </div>
-                    <PostMenuActions post={data} />
-                    <h1 className="mt-8 mb-4 text-sm font-medium">
-                        Categories
-                    </h1>
-                    <div className="flex flex-col gap-2 text-sm">
-                        <Link className="underline" to="/">
-                            All
-                        </Link>
-                        <Link className="underline" to="/">
-                            Development
-                        </Link>
-                        <Link className="underline" to="/">
-                            Databases
-                        </Link>
-                        <Link className="underline" to="/">
-                            Search Engines
-                        </Link>
-                        <Link className="underline" to="/">
-                            Marketing
-                        </Link>
-                        <h1 className="mt-8 mb-4 text-sm font-medium">
-                            Search
-                        </h1>
-                        <Search />
-                    </div>
-                </div>
             </div>
             <Comments postId={data._id} />
         </div>
