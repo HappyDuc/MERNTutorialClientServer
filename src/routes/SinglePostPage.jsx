@@ -59,58 +59,6 @@ const SinglePostPage = () => {
                                 theme={"bubble"}
                             />
                         </div>
-                        {/* menu */}
-                        <div className="px-4 h-max sticky top-8">
-                            <h1 className="mb-4 text-sm font-medium">Author</h1>
-                            <div className="flex flex-col gap-4">
-                                <div className="flex items-center gap-8">
-                                    {data.user.img && (
-                                        <DisplayImage
-                                            src={data.user.img}
-                                            className="w-12 h-12 rounded-full object-cover"
-                                            w="48"
-                                            h="48"
-                                        />
-                                    )}
-                                    <Link className="text-blue-800">
-                                        {data.user.username}
-                                    </Link>
-                                </div>
-                                <div className="flex gap-2">
-                                    <Link>
-                                        <DisplayImage src="facebook.svg" />
-                                    </Link>
-                                    <Link>
-                                        <DisplayImage src="instagram.svg" />
-                                    </Link>
-                                </div>
-                            </div>
-                            <PostMenuActions post={data} />
-                            <h1 className="mt-8 mb-4 text-sm font-medium">
-                                Categories
-                            </h1>
-                            <div className="flex flex-col gap-2 text-sm">
-                                <Link className="underline" to="/">
-                                    All
-                                </Link>
-                                <Link className="underline" to="/">
-                                    Development
-                                </Link>
-                                <Link className="underline" to="/">
-                                    Databases
-                                </Link>
-                                <Link className="underline" to="/">
-                                    Search Engines
-                                </Link>
-                                <Link className="underline" to="/">
-                                    Marketing
-                                </Link>
-                                <h1 className="mt-8 mb-4 text-sm font-medium">
-                                    Search
-                                </h1>
-                                <Search />
-                            </div>
-                        </div>
                     </div>
                 </div>
                 {/* Cover image */}
@@ -123,6 +71,58 @@ const SinglePostPage = () => {
                         />
                     </div>
                 )}
+                {/* menu */}
+                <div className="px-4 h-max sticky top-8">
+                    <h1 className="mb-4 text-sm font-medium">Author</h1>
+                    <div className="flex flex-col gap-4">
+                        <div className="flex items-center gap-8">
+                            {data.user.img && (
+                                <DisplayImage
+                                    src={data.user.img}
+                                    className="w-12 h-12 rounded-full object-cover"
+                                    w="48"
+                                    h="48"
+                                />
+                            )}
+                            <Link className="text-blue-800">
+                                {data.user.username}
+                            </Link>
+                        </div>
+                        <div className="flex gap-2">
+                            <Link>
+                                <DisplayImage src="facebook.svg" />
+                            </Link>
+                            <Link>
+                                <DisplayImage src="instagram.svg" />
+                            </Link>
+                        </div>
+                    </div>
+                    <PostMenuActions post={data} />
+                    <h1 className="mt-8 mb-4 text-sm font-medium">
+                        Categories
+                    </h1>
+                    <div className="flex flex-col gap-2 text-sm">
+                        <Link className="underline" to="/">
+                            All
+                        </Link>
+                        <Link className="underline" to="/">
+                            Development
+                        </Link>
+                        <Link className="underline" to="/">
+                            Databases
+                        </Link>
+                        <Link className="underline" to="/">
+                            Search Engines
+                        </Link>
+                        <Link className="underline" to="/">
+                            Marketing
+                        </Link>
+                        <h1 className="mt-8 mb-4 text-sm font-medium">
+                            Search
+                        </h1>
+                        <Search />
+                    </div>
+                </div>
             </div>
             <Comments postId={data._id} />
         </div>
